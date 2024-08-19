@@ -12,27 +12,21 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="A Neural Network Playground")
 st.title("Neural Network Playground")
 
-def get_dataset(name):
-    if name == "ushape":
-        data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\8 csv dataset\1.ushape.csv", header=None)
-    elif name == "concerticcir1":
-        data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\8 csv dataset\2.concerticcir1.csv", header=None)
-    elif name == "concertriccir2":
-        data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\8 csv dataset\3.concertriccir2.csv", header=None)
-    elif name == "linearsep":
-        data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\8 csv dataset\4.linearsep.csv", header=None)
-    elif name == "outlier":
-        data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\8 csv dataset\5.outlier.csv", header=None)
-    elif name == "overlap":
-        data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\8 csv dataset\6.overlap.csv", header=None)
-    elif name == "xor":
-        data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\8 csv dataset\7.xor.csv", header=None)
-    elif name == "twospirals":
-        data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\8 csv dataset\8.twospirals.csv", header=None)
-    elif name == "random":
-        data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\8 csv dataset\9.random.csv", header=None)
-    else:
-        return None, None
+def get_dataset(name_or_file):
+    # Base URL for raw content in GitHub repository
+    base_url = "https://github.com/chandrakanthkunta/ANN-playground/raw/main/datasets/"
+    
+    file_paths = {
+        "ushape": "1.ushape.csv",
+        "concentriccir1": "2.concentriccir1.csv",
+        "concentriccir2": "3.concentriccir2.csv",
+        "linearsep": "4.linearsep.csv",
+        "outlier": "5.outlier.csv",
+        "overlap": "6.overlap.csv",
+        "xor": "7.xor.csv",
+        "twospirals": "8.twospirals.csv",
+        "random": "9.random.csv"
+    }
     
 
     X = data.iloc[:, 0:2].values
